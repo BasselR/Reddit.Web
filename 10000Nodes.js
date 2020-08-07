@@ -1,4 +1,4 @@
-export let bigList = [
+var bigList = [
     {
       "name": "freewritedaily",
       "adj": [

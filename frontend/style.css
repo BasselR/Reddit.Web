@@ -3,6 +3,33 @@
 @date 2020/04/09 
 */
 
+.hublink {
+    /* margin: 3vh 90vw; */
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    /* text-align: right; */
+}
+
+.gitlink {
+    cursor: pointer;
+    color: rgb(255, 60, 0);
+}
+
+
+.gitlink:link {
+    color: rgb(255, 60, 0);
+}
+
+.gitlink:visited {
+    color: rgb(255, 60, 0);
+}
+
+
+.gitlink:hover {
+    color: rgb(255, 151, 92);
+}
+
 body{
     margin: 0;
     /* background-color: rgba(100, 0, 0, 0.1); */
@@ -22,18 +49,24 @@ canvas{
     text-align: center;
 }
 
+#msg {
+    text-align: center;
+    margin: 30px; 
+}
+
 h1{
     color: rgb(255, 60, 0);
     margin-bottom: 0px;
 }
 
 h3{
-    margin-top: 40px
+    font-size: 25px;
+    margin: 30px;
 }
 
 .center-screen {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -150%);
@@ -41,8 +74,8 @@ h3{
 
 .button {
     position: absolute;
-    top: 50%;
-    left: 52%;
+    top: 70%;
+    left: 55%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
@@ -57,6 +90,7 @@ h3{
 
 .btn {
     background-color: #df6e52;
+    background-color: rgb(255, 110, 66);
     border: none;
     outline: none;
     color: white;
@@ -67,8 +101,14 @@ h3{
     text-decoration: none;
     /* display: inline-block; */
     font-size: 18px;
+    font-weight: 500;
     /* margin: 8px; */
     /* transition-duration: 0.25s; */
     cursor: pointer;
     border-radius: 4px;
+}
+
+.middle {
+    margin-top: 65px;
+    text-align: center;
 }

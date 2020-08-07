@@ -8,7 +8,7 @@
 
 //console.log("heLlO wOrLD");
 
-import bigList from '../10000Nodes.js'
+// import bigList from '../10000Nodes.js'
 
 const buttonOffset = 39;
 const parentSubsPerPage = 10;
@@ -24,7 +24,7 @@ let mapList = [];
 
 var hoverAlpha = 0.3;
 
-
+var masterList;
 var totalNodeArray = [];
 var currentPointer = 0;
 var currNodeArray;
@@ -45,7 +45,60 @@ var mouse = {
 let refresh = () => currNodeArray = totalNodeArray[ currentPointer > totalSubs/parentSubsPerPage - 1 || totalSubs/parentSubsPerPage == 1 ? 0 : ++currentPointer];
 
 function useLocal(){
-    console.log(bigList.length);
+    document.getElementById("jsonFile").style.display = "none";
+    document.getElementById("startDiv").style.display = "none";
+    document.getElementById("initial").style.display = "none";
+    document.getElementById("msg").style.display = "none";
+    document.getElementById("myCanvas").style.display = "block";
+    document.getElementById("refreshDiv").style.display = "block";
+
+    //console.log("Event occured: FileReader onLoad");
+    masterList = bigList;
+    totalSubs = masterList.length;
+    // Main code goes here (since main code should happen AFTER onload() is fired (fr.readAsText finishes))
+    
+    for(var i = 0; i < masterList.length / parentSubsPerPage; i++){
+        let nodeArray = [];
+        mapList.push(new Map());
+        //Populating nodeArray
+        for(var k = parentSubsPerPage * i; k < parentSubsPerPage * (i+1); k++){
+            //console.log("i: " + i + " - " + masterList[i]);
+            var name = masterList[k].name;
+            var pos = uniquePos(nodeArray);
+            var x = pos[0];
+            var y = pos[1];
+            var adj = [];
+            var adjCir = [];
+
+            //Adding adjacent nodes to adjList and nodeArray
+            for(var j = 0; j < masterList[k].adj.length; j++){
+                adj.push(masterList[k].adj[j]);
+                var adjName = masterList[k].adj[j].name;
+
+                var adjPos = uniquePos(nodeArray);
+
+                // Ensures that this position is unique to parent subreddit position
+                while(pointDist(adjPos[0], adjPos[1], x, y,) < minDist){
+                    adjPos = uniquePos(nodeArray);
+                }
+
+                var adjX = adjPos[0];
+                var adjY = adjPos[1];
+                var ch = new Circle(adjName, adjX, adjY, nodeRadius, null, null, name);
+                adjCir.push(ch);
+                nodeArray.push(ch);
+                mapList[i].set(adjName, ch);
+            }
+            var chp = new Circle(name, x, y, nodeRadius, adj, adjCir, null);
+            nodeArray.push(chp);
+            mapList[i].set(name, chp);
+        }
+        totalNodeArray.push(nodeArray);
+
+    }
+
+    currNodeArray = totalNodeArray[currentPointer];
+    animate();
 }
 
 // Mouse listener
@@ -62,6 +115,8 @@ window.addEventListener('mousemove',
 function onUpload(e){
     // Makes the msg & input button invisible and the canvas visible
     document.getElementById("jsonFile").style.display = "none";
+    document.getElementById("startDiv").style.display = "none";
+    document.getElementById("initial").style.display = "none";
     document.getElementById("msg").style.display = "none";
     document.getElementById("myCanvas").style.display = "block";
     document.getElementById("refreshDiv").style.display = "block";
