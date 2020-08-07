@@ -17,7 +17,7 @@ var c = myCanvas.getContext('2d');
 //Will store a list of nodes
 // var nodeArray; 
 
-let m = new Map();
+let mapList = [];
 
 var hoverAlpha = 0.3;
 
@@ -43,7 +43,7 @@ function refresh(){
     if(currentPointer > 9){
         currentPointer = 0;
     }
-    currNodeArray = totalNodeArray[currentPointer++];
+    currNodeArray = totalNodeArray[++currentPointer];
 }
 
 // Mouse listener
@@ -84,6 +84,7 @@ function onUpload(e){
         
         for(var i = 0; i < masterList.length / parentSubsPerPage; i++){
             let nodeArray = [];
+            mapList.push(new Map());
             //Populating nodeArray
             for(var k = parentSubsPerPage * i; k < parentSubsPerPage * (i+1); k++){
                 //console.log("i: " + i + " - " + masterList[i]);
@@ -111,19 +112,17 @@ function onUpload(e){
                     var ch = new Circle(adjName, adjX, adjY, nodeRadius, null, null, name);
                     adjCir.push(ch);
                     nodeArray.push(ch);
-                    m.set(adjName, ch);
+                    mapList[i].set(adjName, ch);
                 }
                 var chp = new Circle(name, x, y, nodeRadius, adj, adjCir, null);
                 nodeArray.push(chp);
-                m.set(name, chp);
+                mapList[i].set(name, chp);
             }
             totalNodeArray.push(nodeArray);
+
         }
 
         currNodeArray = totalNodeArray[currentPointer];
-        currentPointer++;
-
-        console.log("Current node array [0] type: " + typeof(currNodeArray[0]));
 
         animate();
     }
@@ -249,13 +248,14 @@ class Circle{
     }
     // *Incomplete* Display information about a node when the node is hovered over
     hover(b){
+        
         if(Math.abs(mouse.x - this.x) < this.radius && Math.abs((mouse.y - this.y) - buttonOffset) < this.radius){
             if(this.adj != null){
                 this.parentChild(b);
             }
-            
             if(this.parent != null){
-                m.get(this.parent).parentChild(b);
+                mapList[currentPointer].get(this.parent).parentChild(b);
+                
             }
         }
     }
