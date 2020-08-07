@@ -8,13 +8,26 @@
 
 //console.log("heLlO wOrLD");
 
+// import bigList from '../10000Nodes.js'
+
+const buttonOffset = 39;
+const parentSubsPerPage = 10;
+let totalSubs;
+
 var myCanvas = document.querySelector('canvas');
 var c = myCanvas.getContext('2d');
 
-var nodeArray; //Will store a list of nodes
-let m = new Map();
+//Will store a list of nodes
+// var nodeArray; 
+
+let mapList = [];
 
 var hoverAlpha = 0.3;
+
+var masterList;
+var totalNodeArray = [];
+var currentPointer = 0;
+var currNodeArray;
 
 myCanvas.width = window.innerWidth - 100;
 myCanvas.height = window.innerHeight - 100;
@@ -27,6 +40,65 @@ var minDist = 3 * nodeRadius;
 var mouse = {
     x: null,
     y: null
+}
+
+let refresh = () => currNodeArray = totalNodeArray[ currentPointer > totalSubs/parentSubsPerPage - 1 || totalSubs/parentSubsPerPage == 1 ? 0 : ++currentPointer];
+
+function useLocal(){
+    document.getElementById("jsonFile").style.display = "none";
+    document.getElementById("startDiv").style.display = "none";
+    document.getElementById("initial").style.display = "none";
+    document.getElementById("msg").style.display = "none";
+    document.getElementById("myCanvas").style.display = "block";
+    document.getElementById("refreshDiv").style.display = "block";
+
+    //console.log("Event occured: FileReader onLoad");
+    masterList = bigList;
+    totalSubs = masterList.length;
+    // Main code goes here (since main code should happen AFTER onload() is fired (fr.readAsText finishes))
+    
+    for(var i = 0; i < masterList.length / parentSubsPerPage; i++){
+        let nodeArray = [];
+        mapList.push(new Map());
+        //Populating nodeArray
+        for(var k = parentSubsPerPage * i; k < parentSubsPerPage * (i+1); k++){
+            //console.log("i: " + i + " - " + masterList[i]);
+            var name = masterList[k].name;
+            var pos = uniquePos(nodeArray);
+            var x = pos[0];
+            var y = pos[1];
+            var adj = [];
+            var adjCir = [];
+
+            //Adding adjacent nodes to adjList and nodeArray
+            for(var j = 0; j < masterList[k].adj.length; j++){
+                adj.push(masterList[k].adj[j]);
+                var adjName = masterList[k].adj[j].name;
+
+                var adjPos = uniquePos(nodeArray);
+
+                // Ensures that this position is unique to parent subreddit position
+                while(pointDist(adjPos[0], adjPos[1], x, y,) < minDist){
+                    adjPos = uniquePos(nodeArray);
+                }
+
+                var adjX = adjPos[0];
+                var adjY = adjPos[1];
+                var ch = new Circle(adjName, adjX, adjY, nodeRadius, null, null, name);
+                adjCir.push(ch);
+                nodeArray.push(ch);
+                mapList[i].set(adjName, ch);
+            }
+            var chp = new Circle(name, x, y, nodeRadius, adj, adjCir, null);
+            nodeArray.push(chp);
+            mapList[i].set(name, chp);
+        }
+        totalNodeArray.push(nodeArray);
+
+    }
+
+    currNodeArray = totalNodeArray[currentPointer];
+    animate();
 }
 
 // Mouse listener
@@ -43,15 +115,19 @@ window.addEventListener('mousemove',
 function onUpload(e){
     // Makes the msg & input button invisible and the canvas visible
     document.getElementById("jsonFile").style.display = "none";
+    document.getElementById("startDiv").style.display = "none";
+    document.getElementById("initial").style.display = "none";
     document.getElementById("msg").style.display = "none";
     document.getElementById("myCanvas").style.display = "block";
+    document.getElementById("refreshDiv").style.display = "block";
 
     //console.log("Event occured: onUpload");
-    jsonFile = document.getElementById('jsonFile').files[0];    //Stores uploaded file in midiFile
+    let jsonFile = document.getElementById('jsonFile').files[0];    //Stores uploaded file in midiFile
     var fr = new FileReader();
 
     fr.readAsText(jsonFile);    //Reads file as text, stores in fr.result
     //console.log("bar");
+
 
     //fr.onload event is fired once fr.readAsText finishes loading file
     // *** fr.onload is ASYNCHRONOUS ***
@@ -60,47 +136,50 @@ function onUpload(e){
         //console.log("foo");
         //console.log("Event occured: FileReader onLoad");
         masterList = JSON.parse(fr.result);    //JSON parses the JSON text stored in uploaded file (midiFile)
-
+        totalSubs = masterList.length;
         // Main code goes here (since main code should happen AFTER onload() is fired (fr.readAsText finishes))
         
-        nodeArray = [];
-        
+        for(var i = 0; i < masterList.length / parentSubsPerPage; i++){
+            let nodeArray = [];
+            mapList.push(new Map());
+            //Populating nodeArray
+            for(var k = parentSubsPerPage * i; k < parentSubsPerPage * (i+1); k++){
+                //console.log("i: " + i + " - " + masterList[i]);
+                var name = masterList[k].name;
+                var pos = uniquePos(nodeArray);
+                var x = pos[0];
+                var y = pos[1];
+                var adj = [];
+                var adjCir = [];
 
-        //Populating nodeArray
-        for(var i = 0; i < masterList.length; i++){
-            //console.log("i: " + i + " - " + masterList[i]);
-            var name = masterList[i].name;
-            var pos = uniquePos();
-            var x = pos[0];
-            var y = pos[1];
-            var adj = [];
-            var adjCir = [];
+                //Adding adjacent nodes to adjList and nodeArray
+                for(var j = 0; j < masterList[k].adj.length; j++){
+                    adj.push(masterList[k].adj[j]);
+                    var adjName = masterList[k].adj[j].name;
 
-            //Adding adjacent nodes to adjList and nodeArray
-            for(var j = 0; j < masterList[i].adj.length; j++){
-                adj.push(masterList[i].adj[j]);
-                var adjName = masterList[i].adj[j].name;
+                    var adjPos = uniquePos(nodeArray);
 
-                var adjPos = uniquePos();
+                    // Ensures that this position is unique to parent subreddit position
+                    while(pointDist(adjPos[0], adjPos[1], x, y,) < minDist){
+                        adjPos = uniquePos(nodeArray);
+                    }
 
-                // Ensures that this position is unique to parent subreddit position
-                while(pointDist(adjPos[0], adjPos[1], x, y,) < minDist){
-                    adjPos = uniquePos();
+                    var adjX = adjPos[0];
+                    var adjY = adjPos[1];
+                    var ch = new Circle(adjName, adjX, adjY, nodeRadius, null, null, name);
+                    adjCir.push(ch);
+                    nodeArray.push(ch);
+                    mapList[i].set(adjName, ch);
                 }
-
-                var adjX = adjPos[0];
-                var adjY = adjPos[1];
-                var ch = new Circle(adjName, adjX, adjY, nodeRadius, null, null, name);
-                adjCir.push(ch);
-                nodeArray.push(ch);
-                m.set(adjName, ch);
+                var chp = new Circle(name, x, y, nodeRadius, adj, adjCir, null);
+                nodeArray.push(chp);
+                mapList[i].set(name, chp);
             }
-            var chp = new Circle(name, x, y, nodeRadius, adj, adjCir, null);
-            nodeArray.push(chp);
-            m.set(name, chp);
-        }
-        
+            totalNodeArray.push(nodeArray);
 
+        }
+
+        currNodeArray = totalNodeArray[currentPointer];
         animate();
     }
 }
@@ -113,7 +192,7 @@ function pointDist(fromX, fromY, toX, toY){
 }
 
 // Generates a unique position (one such that it is not closer than minDist for any circle in nodeArray)
-function uniquePos(){
+function uniquePos(nodeArray){
     result = [];
 
     var unique = false;
@@ -225,13 +304,14 @@ class Circle{
     }
     // *Incomplete* Display information about a node when the node is hovered over
     hover(b){
-        if(Math.abs(mouse.x - this.x) < this.radius && Math.abs(mouse.y - this.y) < this.radius){
+        
+        if(Math.abs(mouse.x - this.x) < this.radius && Math.abs((mouse.y - this.y) - buttonOffset) < this.radius){
             if(this.adj != null){
                 this.parentChild(b);
             }
-            
             if(this.parent != null){
-                m.get(this.parent).parentChild(b);
+                mapList[currentPointer].get(this.parent).parentChild(b);
+                
             }
         }
     }
@@ -247,8 +327,8 @@ class Circle{
 function animate(){
     requestAnimationFrame(animate);
     c.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    for(var i = 0; i < nodeArray.length; i++){
-        nodeArray[i].update();
+    for(var i = 0; i < currNodeArray.length; i++){
+        currNodeArray[i].update();
     }
     
 }
