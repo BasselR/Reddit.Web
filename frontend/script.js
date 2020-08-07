@@ -10,6 +10,7 @@
 
 const buttonOffset = 39;
 const parentSubsPerPage = 10;
+let totalSubs;
 
 var myCanvas = document.querySelector('canvas');
 var c = myCanvas.getContext('2d');
@@ -39,12 +40,7 @@ var mouse = {
     y: null
 }
 
-function refresh(){
-    if(currentPointer > 9){
-        currentPointer = 0;
-    }
-    currNodeArray = totalNodeArray[++currentPointer];
-}
+let refresh = ()=> currNodeArray = totalNodeArray[ currentPointer > totalSubs/parentSubsPerPage - 1 || totalSubs/parentSubsPerPage == 1 ? 0 : ++currentPointer];   
 
 // Mouse listener
 window.addEventListener('mousemove', 
@@ -79,7 +75,7 @@ function onUpload(e){
         //console.log("foo");
         //console.log("Event occured: FileReader onLoad");
         masterList = JSON.parse(fr.result);    //JSON parses the JSON text stored in uploaded file (midiFile)
-
+        totalSubs = masterList.length;
         // Main code goes here (since main code should happen AFTER onload() is fired (fr.readAsText finishes))
         
         for(var i = 0; i < masterList.length / parentSubsPerPage; i++){
@@ -123,7 +119,6 @@ function onUpload(e){
         }
 
         currNodeArray = totalNodeArray[currentPointer];
-
         animate();
     }
 }
