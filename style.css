@@ -45,7 +45,30 @@ h3{
     left: 52%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-  }
+}
 
-  
-  
+#refreshDiv {
+    text-align: center;
+    display: none;
+    /* position: fixed; */
+    /* top: 12vh;
+    left: 47vw; */
+}
+
+.btn {
+    background-color: #df6e52;
+    border: none;
+    outline: none;
+    color: white;
+    /* width: 176px;
+    height: 81px; */
+    /* padding: 15px 10px; */
+    /* text-align: center; */
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 18px;
+    /* margin: 8px; */
+    /* transition-duration: 0.25s; */
+    cursor: pointer;
+    border-radius: 4px;
+}
