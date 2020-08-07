@@ -51,7 +51,7 @@ canvas{
 
 #msg {
     text-align: center;
-    margin: 30px; 
+    /* margin-bottom: 30px;  */
 }
 
 h1{
@@ -112,3 +112,10 @@ h3{
     margin-top: 65px;
     text-align: center;
 }
+
+#disc{
+    text-align: center;
+    padding-top: 10vh;
+
+}
+
