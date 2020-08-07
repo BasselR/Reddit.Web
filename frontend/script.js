@@ -8,6 +8,8 @@
 
 //console.log("heLlO wOrLD");
 
+import bigList from '../10000Nodes.js'
+
 const buttonOffset = 39;
 const parentSubsPerPage = 10;
 let totalSubs;
@@ -40,7 +42,11 @@ var mouse = {
     y: null
 }
 
-let refresh = ()=> currNodeArray = totalNodeArray[ currentPointer > totalSubs/parentSubsPerPage - 1 || totalSubs/parentSubsPerPage == 1 ? 0 : ++currentPointer];   
+let refresh = () => currNodeArray = totalNodeArray[ currentPointer > totalSubs/parentSubsPerPage - 1 || totalSubs/parentSubsPerPage == 1 ? 0 : ++currentPointer];
+
+function useLocal(){
+    console.log(bigList.length);
+}
 
 // Mouse listener
 window.addEventListener('mousemove', 
