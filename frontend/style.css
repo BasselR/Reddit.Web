@@ -71,7 +71,7 @@ h3{
     margin-right: -50%;
     transform: translate(-50%, -150%); */
     margin: 8vh 5vw;
-  }
+}
 
 .button {
     position: absolute;
@@ -125,4 +125,3 @@ h3{
     text-align: center;
     padding-top: 10vh;
 }
-

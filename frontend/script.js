@@ -49,6 +49,7 @@ function useLocal(){
     document.getElementById("startDiv").style.display = "none";
     document.getElementById("initial").style.display = "none";
     document.getElementById("msg").style.display = "none";
+    document.getElementById("msgDiv").style.display = "none";
     document.getElementById("myCanvas").style.display = "block";
     document.getElementById("refreshDiv").style.display = "block";
     document.getElementById("disc").style.display = "none";
@@ -119,6 +120,7 @@ function onUpload(e){
     document.getElementById("startDiv").style.display = "none";
     document.getElementById("initial").style.display = "none";
     document.getElementById("msg").style.display = "none";
+    document.getElementById("msgDiv").style.display = "none";
     document.getElementById("myCanvas").style.display = "block";
     document.getElementById("refreshDiv").style.display = "block";
     document.getElementById("disc").style.display = "none";
