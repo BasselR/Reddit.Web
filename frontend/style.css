@@ -1,0 +1,74 @@
+/* 
+@author Bassel Rezkalla
+@date 2020/04/09 
+*/
+
+body{
+    margin: 0;
+    /* background-color: rgba(100, 0, 0, 0.1); */
+}
+
+input{
+    display: block;
+    margin: auto;
+    padding: 70px 0;
+}
+
+canvas{
+    display: none;
+}
+
+.title{
+    text-align: center;
+}
+
+h1{
+    color: rgb(255, 60, 0);
+    margin-bottom: 0px;
+}
+
+h3{
+    margin-top: 40px
+}
+
+.center-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -150%);
+  }
+
+.button {
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#refreshDiv {
+    text-align: center;
+    display: none;
+    /* position: fixed; */
+    /* top: 12vh;
+    left: 47vw; */
+}
+
+.btn {
+    background-color: #df6e52;
+    border: none;
+    outline: none;
+    color: white;
+    /* width: 176px;
+    height: 81px; */
+    /* padding: 15px 10px; */
+    /* text-align: center; */
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 18px;
+    /* margin: 8px; */
+    /* transition-duration: 0.25s; */
+    cursor: pointer;
+    border-radius: 4px;
+}
