@@ -104832,5 +104832,205 @@ var bigList = [
           "name": "fivenightsatfreddys"
         }
       ]
+    },
+    {
+      "name": "batty",
+      "adj": [
+        {
+          "name": "askscience"
+        },
+        {
+          "name": "batfacts"
+        }
+      ]
+    },
+    {
+      "name": "aussie_vapers",
+      "adj": [
+        {
+          "name": "electronic_cigarette"
+        }
+      ]
+    },
+    {
+      "name": "octobersveryown",
+      "adj": [
+        {
+          "name": "hiphopheads"
+        },
+        {
+          "name": "donaldglover"
+        },
+        {
+          "name": "21savage"
+        },
+        {
+          "name": "drizzy"
+        }
+      ]
+    },
+    {
+      "name": "fieldhockey",
+      "adj": [
+        {
+          "name": "soccer"
+        }
+      ]
+    },
+    {
+      "name": "mnzgov",
+      "adj": [
+        {
+          "name": "mnzgovpress"
+        },
+        {
+          "name": "modelnzec"
+        }
+      ]
+    },
+    {
+      "name": "relationships_updates",
+      "adj": [
+        {
+          "name": "relationships"
+        }
+      ]
+    },
+    {
+      "name": "optionsonly",
+      "adj": [
+        {
+          "name": "wallstreetbets"
+        }
+      ]
+    },
+    {
+      "name": "baltimore4sanders",
+      "adj": [
+        {
+          "name": "sandersforpresident"
+        }
+      ]
+    },
+    {
+      "name": "civclicker",
+      "adj": [
+        {
+          "name": "incremental_games"
+        }
+      ]
+    },
+    {
+      "name": "eggfreezing",
+      "adj": [
+        {
+          "name": "infertility"
+        }
+      ]
+    },
+    {
+      "name": "shitspam",
+      "adj": [
+        {
+          "name": "documentaries"
+        }
+      ]
+    },
+    {
+      "name": "chrome",
+      "adj": [
+        {
+          "name": "technology"
+        },
+        {
+          "name": "askscience"
+        },
+        {
+          "name": "bitcoin"
+        }
+      ]
+    },
+    {
+      "name": "myroleplayprompts",
+      "adj": [
+        {
+          "name": "dirtypenpals"
+        }
+      ]
+    },
+    {
+      "name": "punditfact",
+      "adj": [
+        {
+          "name": "iama"
+        },
+        {
+          "name": "askhistorians"
+        }
+      ]
+    },
+    {
+      "name": "teamhummingbird",
+      "adj": [
+        {
+          "name": "loseit"
+        },
+        {
+          "name": "lifeprotips"
+        },
+        {
+          "name": "fitness"
+        }
+      ]
+    },
+    {
+      "name": "daddit",
+      "adj": [
+        {
+          "name": "iama"
+        },
+        {
+          "name": "raisingkids"
+        },
+        {
+          "name": "marvel"
+        },
+        {
+          "name": "redditdonate"
+        }
+      ]
+    },
+    {
+      "name": "applewhatshouldibuy",
+      "adj": [
+        {
+          "name": "apple"
+        }
+      ]
+    },
+    {
+      "name": "riseagainst",
+      "adj": [
+        {
+          "name": "avengedsevenfold"
+        },
+        {
+          "name": "muse"
+        },
+        {
+          "name": "clickerheroes"
+        },
+        {
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "neoplatonism",
+      "adj": [
+        {
+          "name": "psychonaut"
+        }
+      ]
     }
   ];
