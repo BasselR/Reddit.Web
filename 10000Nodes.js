@@ -7,14 +7,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "ejuice",
-      "adj": [
-        {
-          "name": "electronic_cigarette"
-        }
-      ]
-    },
+    // {
+    //   "name": "ejuice",
+    //   "adj": [
+    //     {
+    //       "name": "electronic_cigarette"
+    //     }
+    //   ]
+    // },
     {
       "name": "stannispowers",
       "adj": [
@@ -34,17 +34,51 @@ var bigList = [
         }
       ]
     },
+    // {
+    //   "name": "nationalsocialism",
+    //   "adj": [
+    //     {
+    //       "name": "whiterights"
+    //     },
+    //     {
+    //       "name": "european"
+    //     },
+    //     {
+    //       "name": "antisemitismwatch"
+    //     }
+    //   ]
+    // },
     {
-      "name": "nationalsocialism",
+      "name": "fiction",
       "adj": [
         {
-          "name": "whiterights"
+          "name": "booksuggestions"
         },
         {
-          "name": "european"
+          "name": "writingprompts"
         },
         {
-          "name": "antisemitismwatch"
+          "name": "sffstories"
+        },
+        {
+          "name": "truecreepy"
+        }
+      ]
+    },
+    {
+      "name": "ndp",
+      "adj": [
+        {
+          "name": "detroit"
+        },
+        {
+          "name": "lpc"
+        },
+        {
+          "name": "londonontario"
+        },
+        {
+          "name": "canadapolitics"
         }
       ]
     },
@@ -56,14 +90,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "kikshows",
-      "adj": [
-        {
-          "name": "dirtysnapchatters"
-        }
-      ]
-    },
+    // {
+    //   "name": "kikshows",
+    //   "adj": [
+    //     {
+    //       "name": "dirtysnapchatters"
+    //     }
+    //   ]
+    // },
     {
       "name": "mgsvideathstranding",
       "adj": [
@@ -78,14 +112,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "kama_sutra",
-      "adj": [
-        {
-          "name": "succubae"
-        }
-      ]
-    },
+    // {
+    //   "name": "kama_sutra",
+    //   "adj": [
+    //     {
+    //       "name": "succubae"
+    //     }
+    //   ]
+    // },
     {
       "name": "guitarlessons",
       "adj": [
@@ -141,20 +175,20 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "peds",
-      "adj": [
-        {
-          "name": "steroids"
-        },
-        {
-          "name": "bodybuilding"
-        },
-        {
-          "name": "nootropics"
-        }
-      ]
-    },
+    // {
+    //   "name": "peds",
+    //   "adj": [
+    //     {
+    //       "name": "steroids"
+    //     },
+    //     {
+    //       "name": "bodybuilding"
+    //     },
+    //     {
+    //       "name": "nootropics"
+    //     }
+    //   ]
+    // },
     {
       "name": "chronotrigger",
       "adj": [
@@ -174,17 +208,17 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "wouldyoufuckmywife",
-      "adj": [
-        {
-          "name": "hotwife"
-        },
-        {
-          "name": "fetishes"
-        }
-      ]
-    },
+    // {
+    //   "name": "wouldyoufuckmywife",
+    //   "adj": [
+    //     {
+    //       "name": "hotwife"
+    //     },
+    //     {
+    //       "name": "fetishes"
+    //     }
+    //   ]
+    // },
     {
       "name": "dynastyfftest",
       "adj": [
@@ -193,20 +227,20 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "queertheory",
-      "adj": [
-        {
-          "name": "mhocgevotes"
-        },
-        {
-          "name": "kotakuinaction"
-        },
-        {
-          "name": "theoryclub"
-        }
-      ]
-    },
+    // {
+    //   "name": "queertheory",
+    //   "adj": [
+    //     {
+    //       "name": "mhocgevotes"
+    //     },
+    //     {
+    //       "name": "kotakuinaction"
+    //     },
+    //     {
+    //       "name": "theoryclub"
+    //     }
+    //   ]
+    // },
     {
       "name": "hermitcraftfiu",
       "adj": [
@@ -252,40 +286,6 @@ var bigList = [
       ]
     },
     {
-      "name": "fiction",
-      "adj": [
-        {
-          "name": "booksuggestions"
-        },
-        {
-          "name": "writingprompts"
-        },
-        {
-          "name": "sffstories"
-        },
-        {
-          "name": "truecreepy"
-        }
-      ]
-    },
-    {
-      "name": "ndp",
-      "adj": [
-        {
-          "name": "detroit"
-        },
-        {
-          "name": "lpc"
-        },
-        {
-          "name": "londonontario"
-        },
-        {
-          "name": "canadapolitics"
-        }
-      ]
-    },
-    {
       "name": "tagprostreaming",
       "adj": [
         {
@@ -320,14 +320,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "joip",
-      "adj": [
-        {
-          "name": "gonewildaudio"
-        }
-      ]
-    },
+    // {
+    //   "name": "joip",
+    //   "adj": [
+    //     {
+    //       "name": "gonewildaudio"
+    //     }
+    //   ]
+    // },
     {
       "name": "newskaters",
       "adj": [
@@ -405,17 +405,17 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "edgingtalk",
-      "adj": [
-        {
-          "name": "meditation"
-        },
-        {
-          "name": "sex"
-        }
-      ]
-    },
+    // {
+    //   "name": "edgingtalk",
+    //   "adj": [
+    //     {
+    //       "name": "meditation"
+    //     },
+    //     {
+    //       "name": "sex"
+    //     }
+    //   ]
+    // },
     {
       "name": "reckoners",
       "adj": [
@@ -430,31 +430,31 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "bottomofyoutube",
-      "adj": [
-        {
-          "name": "overtalefangame"
-        },
-        {
-          "name": "uglytindergirls"
-        },
-        {
-          "name": "esotericos"
-        },
-        {
-          "name": "tnsbigboybonanza"
-        }
-      ]
-    },
-    {
-      "name": "hunnofap",
-      "adj": [
-        {
-          "name": "nofap"
-        }
-      ]
-    },
+    // {
+    //   "name": "bottomofyoutube",
+    //   "adj": [
+    //     {
+    //       "name": "overtalefangame"
+    //     },
+    //     {
+    //       "name": "uglytindergirls"
+    //     },
+    //     {
+    //       "name": "esotericos"
+    //     },
+    //     {
+    //       "name": "tnsbigboybonanza"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "name": "hunnofap",
+    //   "adj": [
+    //     {
+    //       "name": "nofap"
+    //     }
+    //   ]
+    // },
     {
       "name": "blahlicus",
       "adj": [
@@ -789,14 +789,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "progressivegrowth",
-      "adj": [
-        {
-          "name": "bimbofication"
-        }
-      ]
-    },
+    // {
+    //   "name": "progressivegrowth",
+    //   "adj": [
+    //     {
+    //       "name": "bimbofication"
+    //     }
+    //   ]
+    // },
     {
       "name": "gloucestershire",
       "adj": [
@@ -894,20 +894,20 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "navy_regiment",
-      "adj": [
-        {
-          "name": "ceruleanregiment"
-        },
-        {
-          "name": "nofap"
-        },
-        {
-          "name": "nofapwar"
-        }
-      ]
-    },
+    // {
+    //   "name": "navy_regiment",
+    //   "adj": [
+    //     {
+    //       "name": "ceruleanregiment"
+    //     },
+    //     {
+    //       "name": "nofap"
+    //     },
+    //     {
+    //       "name": "nofapwar"
+    //     }
+    //   ]
+    // },
     {
       "name": "mhocwagers",
       "adj": [
@@ -1019,14 +1019,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "shitagainstgamergate",
-      "adj": [
-        {
-          "name": "againstgamergate"
-        }
-      ]
-    },
+    // {
+    //   "name": "shitagainstgamergate",
+    //   "adj": [
+    //     {
+    //       "name": "againstgamergate"
+    //     }
+    //   ]
+    // },
     {
       "name": "freemasonry",
       "adj": [
@@ -1109,14 +1109,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "dirtypeepals",
-      "adj": [
-        {
-          "name": "dirtypenpals"
-        }
-      ]
-    },
+    // {
+    //   "name": "dirtypeepals",
+    //   "adj": [
+    //     {
+    //       "name": "dirtypenpals"
+    //     }
+    //   ]
+    // },
     {
       "name": "liverpool",
       "adj": [
@@ -1285,17 +1285,17 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "poop",
-      "adj": [
-        {
-          "name": "askreddit"
-        },
-        {
-          "name": "showerthoughts"
-        }
-      ]
-    },
+    // {
+    //   "name": "poop",
+    //   "adj": [
+    //     {
+    //       "name": "askreddit"
+    //     },
+    //     {
+    //       "name": "showerthoughts"
+    //     }
+    //   ]
+    // },
     {
       "name": "ustemplars",
       "adj": [
@@ -1463,17 +1463,17 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "triggered",
-      "adj": [
-        {
-          "name": "autismisms"
-        },
-        {
-          "name": "racistpeopletwitter"
-        }
-      ]
-    },
+    // {
+    //   "name": "triggered",
+    //   "adj": [
+    //     {
+    //       "name": "autismisms"
+    //     },
+    //     {
+    //       "name": "racistpeopletwitter"
+    //     }
+    //   ]
+    // },
     {
       "name": "redditempireclan",
       "adj": [
@@ -1482,14 +1482,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "doubleicefutadicks",
-      "adj": [
-        {
-          "name": "rwbyrp"
-        }
-      ]
-    },
+    // {
+    //   "name": "doubleicefutadicks",
+    //   "adj": [
+    //     {
+    //       "name": "rwbyrp"
+    //     }
+    //   ]
+    // },
     {
       "name": "ofcourseitsathing",
       "adj": [
@@ -1716,14 +1716,14 @@ var bigList = [
         }
       ]
     },
-    {
-      "name": "camming",
-      "adj": [
-        {
-          "name": "gonewild"
-        }
-      ]
-    },
+    // {
+    //   "name": "camming",
+    //   "adj": [
+    //     {
+    //       "name": "gonewild"
+    //     }
+    //   ]
+    // },
     {
       "name": "nate_parker_books",
       "adj": [
