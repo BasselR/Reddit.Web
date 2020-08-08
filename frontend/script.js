@@ -49,8 +49,10 @@ function useLocal(){
     document.getElementById("startDiv").style.display = "none";
     document.getElementById("initial").style.display = "none";
     document.getElementById("msg").style.display = "none";
+    document.getElementById("msgDiv").style.display = "none";
     document.getElementById("myCanvas").style.display = "block";
     document.getElementById("refreshDiv").style.display = "block";
+    document.getElementById("disc").style.display = "none";
 
     //console.log("Event occured: FileReader onLoad");
     masterList = bigList;
@@ -118,9 +120,11 @@ function onUpload(e){
     document.getElementById("startDiv").style.display = "none";
     document.getElementById("initial").style.display = "none";
     document.getElementById("msg").style.display = "none";
+    document.getElementById("msgDiv").style.display = "none";
     document.getElementById("myCanvas").style.display = "block";
     document.getElementById("refreshDiv").style.display = "block";
-
+    document.getElementById("disc").style.display = "none";
+    
     //console.log("Event occured: onUpload");
     let jsonFile = document.getElementById('jsonFile').files[0];    //Stores uploaded file in midiFile
     var fr = new FileReader();

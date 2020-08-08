@@ -38,7 +38,7 @@ body{
 input{
     display: block;
     margin: auto;
-    padding: 70px 0;
+    padding: 4vh 0;
 }
 
 canvas{
@@ -51,7 +51,7 @@ canvas{
 
 #msg {
     text-align: center;
-    margin: 30px; 
+    /* margin-bottom: 30px;  */
 }
 
 h1{
@@ -65,12 +65,13 @@ h3{
 }
 
 .center-screen {
-    position: absolute;
+    /* position: absolute;
     top: 70%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -150%);
-  }
+    transform: translate(-50%, -150%); */
+    margin: 8vh 5vw;
+}
 
 .button {
     position: absolute;
@@ -78,6 +79,8 @@ h3{
     left: 55%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    /* margin: 3vh 5vw;
+    text-align: center; */
 }
 
 #refreshDiv {
@@ -111,4 +114,14 @@ h3{
 .middle {
     margin-top: 65px;
     text-align: center;
+}
+
+#disc{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    /* margin-right: -50%; */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-top: 10vh;
 }
